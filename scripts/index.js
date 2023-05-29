@@ -34,7 +34,7 @@ function compsTurn() {
     compsChoice = optsArr[Math.floor(Math.random() * optsArr.length)]
 
     if (usersChoice === compsChoice) {
-        winLossOutput.innerText = "There was a draw";
+        winLossOutput.innerText = "It was a draw.";
     } else if (((usersChoice === 'rock') && (compsChoice === 'scissors')) || 
     ((usersChoice === 'scissors') && (compsChoice === 'paper')) || 
     ((usersChoice === 'paper') && (compsChoice === 'rock'))) {
@@ -49,12 +49,12 @@ function compsTurn() {
             
         }
         userScoreText.innerText = usersScore
-        winLossOutput.innerText = "You won this round!";
+        winLossOutput.innerText = "You won this round.";
     } else {
         compsScore++
         if (compsScore === 5) {
             winLossOutput.remove()
-            seriesWinner.innerText = "The computer has won the series..."
+            seriesWinner.innerText = "The computer won the series..."
             rockBtn.style.pointerEvents = 'none'
             paperBtn.style.pointerEvents = 'none'
             scissorsBtn.style.pointerEvents = 'none'
