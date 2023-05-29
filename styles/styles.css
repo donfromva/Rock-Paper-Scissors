@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /*
+    background: url('.././images/cool-landscape.jpg');
+    background-size: cover;
+    */
+    background: #FAF9F6;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+.block {
+    border: 2px solid black;
+    width: 150px;
+    height: 150px;
+}
+
+.block.option {
+    border: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.options, .scores {
+    display: flex;
+    gap: 16px;
+
+}
+
+.options {
+    margin: 16px;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+}
+
+.options .option .opt-btn {
+    border: none;
+    background: transparent;
+}
+
+.options .option img {
+    width: 100px;
+    height: auto;
+    border: none;
+    transition: all .2s ease-in-out;
+    
+}
+
+.options .option img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.score-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-block .block {
+    display: flex;
+    justify-content: center;
+}
+
+.score-block .block.indy-score {
+    height: fit-content;
+    border-radius: 5px;
+    margin: 16px 0;
+    padding: 4px;
+}
+
+.wl-output, .score-count {
+    margin-bottom: 16px;
+}
