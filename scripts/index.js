@@ -2,8 +2,13 @@
 let rockBtn = document.getElementById('rock');
 let paperBtn = document.getElementById('paper');
 let scissorsBtn = document.getElementById('scissors');
+let retryBtn = document.getElementById('retry-btn')
+let userScoreText = document.querySelector('.user-score');
+let compScoreText = document.querySelector('.comp-score');
+let winLossOutput = document.querySelector('.wl-output');
+let seriesWinner = document.querySelector('.series-win');
+let replayDiv = document.querySelector('.replay')
 
-// With any weapon a user chooses, a function that chooses the computers weapon (randomly) will evoke
 let usersChoice;
 let usersScore = 0;
 
@@ -27,29 +32,41 @@ optsArr = ['rock', 'paper', 'scissors'];
 
 function compsTurn() {
     compsChoice = optsArr[Math.floor(Math.random() * optsArr.length)]
-    console.log(usersChoice)
-    console.log(compsChoice)
-    
+
     if (usersChoice === compsChoice) {
-        console.log('There was a draw')
+        winLossOutput.innerText = "There was a draw";
     } else if (((usersChoice === 'rock') && (compsChoice === 'scissors')) || 
     ((usersChoice === 'scissors') && (compsChoice === 'paper')) || 
     ((usersChoice === 'paper') && (compsChoice === 'rock'))) {
         usersScore++
-        console.log("You've won this round!")
+        if (usersScore === 5) {
+            winLossOutput.remove()
+            seriesWinner.innerText = 'Congrats! You won the series!'
+            rockBtn.style.pointerEvents = 'none'
+            paperBtn.style.pointerEvents = 'none'
+            scissorsBtn.style.pointerEvents = 'none'
+            replayDiv.style.display = 'flex'
+            
+        }
+        userScoreText.innerText = usersScore
+        winLossOutput.innerText = "You won this round!";
     } else {
-        console.log("The computer has won this round.")
         compsScore++
+        if (compsScore === 5) {
+            winLossOutput.remove()
+            seriesWinner.innerText = "The computer has won the series..."
+            rockBtn.style.pointerEvents = 'none'
+            paperBtn.style.pointerEvents = 'none'
+            scissorsBtn.style.pointerEvents = 'none'
+            replayDiv.style.display = 'flex'
+        }
+        compScoreText.innerText = compsScore
+        winLossOutput.innerText = "The computer won this round.";
     }
-
-    compScore()
-    userScore()
 }
 
-function compScore() {
-    console.log(`Computer's score: ${compsScore}`)
-}
+retryBtn.addEventListener('click', () => {
+    location.reload()
+})
 
-function userScore() {
-    console.log(`User's score: ${usersScore}`)
-}
+

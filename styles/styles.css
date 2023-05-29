@@ -6,13 +6,16 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    position: relative;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    /*
-    background: url('.././images/cool-landscape.jpg');
-    background-size: cover;
-    */
+    position: relative;
     background: #FAF9F6;
+    height: 100%;
 }
 
 .container {
@@ -34,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .options, .scores {
@@ -88,6 +91,51 @@ body {
     padding: 4px;
 }
 
-.wl-output, .score-count {
+.winner-loser, .score-count, #title {
     margin-bottom: 16px;
+}
+
+.wl-output, .series-win, .user-score, 
+.comp-score {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+footer {
+    background: #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.replay {
+    display: none;
+    justify-content: center;
+}
+
+.replay img, .creator img {
+    width: 30px;
+    height: fit-content;
+    transition: all .2s ease-in-out;
+}
+
+.replay img:hover, .creator img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
 }
