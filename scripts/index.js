@@ -49,7 +49,7 @@ function compsTurn() {
             
         }
         userScoreText.innerText = usersScore
-        winLossOutput.innerText = "You won this round!";
+        winLossOutput.innerText = "You won this round.";
     } else {
         compsScore++
         if (compsScore === 5) {
