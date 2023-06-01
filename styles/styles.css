@@ -8,14 +8,14 @@
 
 html {
     height: 100%;
-    position: relative;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
     background: #FAF9F6;
-    height: 100%;
+    min-height: 100%;
+
 }
 
 .container {
@@ -118,6 +118,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    max-height: 54px;
 }
 
 .replay {
@@ -127,7 +128,7 @@ footer {
 
 .replay img, .creator img {
     width: 30px;
-    height: fit-content;
+    height: auto;
     transition: all .2s ease-in-out;
 }
 
